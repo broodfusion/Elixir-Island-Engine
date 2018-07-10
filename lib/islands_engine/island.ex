@@ -4,6 +4,10 @@ defmodule IslandsEngine.Island do
   @enforce_keys [:coordinates, :hit_coordinates]
   defstruct [:coordinates, :hit_coordinates]
 
+  def types() do
+    [:atoll, :dot, :l_shape, :s_shape, :square]
+  end
+
   # check if an Island has been forested
   def forested?(island) do
     MapSet.equal?(island.coordinates, island.hit_coordinates)
